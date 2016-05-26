@@ -1,25 +1,62 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F18c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="openCV" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="IMG_0351.PNG" translatesAutoresizingMaskIntoConstraints="NO" id="auz-LG-09I">
+                                <rect key="frame" x="98" y="127" width="541" height="819"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8DE-qJ-RVn">
+                                <rect key="frame" x="334" y="482" width="305" height="59"/>
+                                <state key="normal" title="実行！"/>
+                                <connections>
+                                    <action selector="filterButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="30V-AL-7r1"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uxs-Mx-0Cn">
+                                <rect key="frame" x="45" y="492" width="306" height="58.5"/>
+                                <state key="normal" title="画像読み込み"/>
+                                <connections>
+                                    <action selector="selectIMG:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Q0J-dl-zyo"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="auz-LG-09I" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8h4-YH-nbL"/>
+                            <constraint firstItem="uxs-Mx-0Cn" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="CGY-8v-kfr"/>
+                            <constraint firstItem="8DE-qJ-RVn" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="TX1-ez-qqg"/>
+                            <constraint firstItem="8DE-qJ-RVn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="100" id="esj-3e-WJe"/>
+                            <constraint firstItem="uxs-Mx-0Cn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-100" id="oWy-4P-b1P"/>
+                            <constraint firstItem="auz-LG-09I" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="ryc-BN-aTp"/>
+                            <constraint firstItem="auz-LG-09I" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="xU7-1i-7Iv"/>
+                        </constraints>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
+                    <connections>
+                        <outlet property="screenImage" destination="auz-LG-09I" id="7Kf-hi-Bh1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="139" y="474"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="IMG_0351.PNG" width="640" height="960"/>
+    </resources>
 </document>
